@@ -1,0 +1,50 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <mat-card class="form">
+                <div class="col-md-6 offset-md-3">
+                    <div class="container text-center">
+                        <img src="../../../assets/movieLogp.png" alt="movie logo" class="movieLogo">
+                    </div>
+
+                    <h1 class="text-center">Add Movie</h1>
+                    <form [formGroup]="movieForm" (ngSubmit)="formSubmit()">
+
+                        <!-- Movie Name -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Movie Name</mat-label>
+                            <input formControlName="movieName" matInput placeholder="Enter Movie Name">
+                        </mat-form-field>
+                        <!-- Theatre Name -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Theatre Name</mat-label>
+                            <input formControlName="theatreName" matInput type="text" placeholder="User Password">
+                        </mat-form-field>
+                        <!-- price -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Movie Price</mat-label>
+                            <input formControlName="price" matInput type="number" placeholder="Movie Price">
+                        </mat-form-field>
+                        <!-- total tickets -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Total Tickets</mat-label>
+                            <input formControlName="totalTickets" matInput type="number" placeholder="Total Tickets">
+                        </mat-form-field>
+                        <!-- Available tickets -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>AvailableTickets</mat-label>
+                            <input formControlName="availableTickets" matInput type="number" placeholder="Available Tickets">
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary" type="submit">Add Movie</button>
+                            <button mat-raised-button class="ml" (click)="clearForm()">Clear Form</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+</div>

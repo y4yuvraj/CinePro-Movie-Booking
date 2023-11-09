@@ -1,0 +1,35 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <mat-card class="view">
+                <div>
+                    <h1 class="text-center">View Bookings</h1>
+                    <div class="mat-elevation-z8" style="overflow-x: auto;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Username</th>
+                                    <th>Movie Name</th>
+                                    <th>Theatre Name</th>
+                                    <th>Number of Tickets</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let booking of bookings">
+                                    <td>{{ booking.bookingId }}</td>
+                                    <td>{{ booking.user.loginId }}</td>
+                                    <td>{{ booking.movie.movieName }}</td>
+                                    <td>{{ booking.theatreName }}</td>
+                                    <td>{{ booking.numberOfTicket }}</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

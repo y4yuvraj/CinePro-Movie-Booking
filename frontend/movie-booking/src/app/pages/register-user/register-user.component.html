@@ -1,0 +1,60 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <mat-card class="form mt">
+          <div class="container text-center">
+            <img src="../../../assets/movieLogp.png" alt="movie logo" class="movieLogo">
+          </div>
+          <h1 class="text-center" >Register Here!</h1>
+          <form [formGroup]="userForm" (ngSubmit)="formSubmit()">
+
+            <!-- Login Id -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Login Id</mat-label>
+              <input formControlName="loginId" matInput placeholder="Enter Login Id">
+            </mat-form-field>
+            <!-- Password -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>User Password</mat-label>
+              <input formControlName="password" matInput type="password" placeholder="User Password"
+                (blur)="checkPasswordMatch()">
+            </mat-form-field>
+            <!-- Confirm Password -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input formControlName="confirmpassword" matInput type="password" placeholder="Confirm Password"
+                (blur)="checkPasswordMatch()">
+            </mat-form-field>
+            <!-- First Name -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input formControlName="firstName" matInput type="text" placeholder="First Name">
+            </mat-form-field>
+            <!-- Last Name -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input formControlName="lastName" matInput type="text" placeholder="Last Name">
+            </mat-form-field>
+            <!-- email -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email Address</mat-label>
+              <input formControlName="email" matInput type="email" placeholder="Email Address">
+            </mat-form-field>
+            <!-- Phone number -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Phone Number</mat-label>
+              <input formControlName="contactNumber" matInput type="number" placeholder="Phone Number">
+            </mat-form-field>
+
+            <div class="container text-center">
+              <button [disabled]="!passwordMatch" mat-raised-button color="primary" type="submit">Register</button>
+              <button mat-raised-button  class="ml" (click)="clearForm()">Clear</button>
+            </div>
+
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

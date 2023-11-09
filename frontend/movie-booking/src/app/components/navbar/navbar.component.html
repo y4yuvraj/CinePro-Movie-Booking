@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="">
+    <mat-icon>movie</mat-icon>
+  </button>
+  <button mat-flat-button color="primary" routerLink="" id="heading">Movie Booking App</button>
+  <span class="example-spacer"></span>
+  <div class="navbar-buttons">
+    <button data-cy="register-button" mat-flat-button color="primary" routerLink="/register-user" *ngIf="!login.isLoggedIn()">
+      Register
+    </button>
+    <button data-cy="login-button" mat-flat-button color="primary" routerLink="/login" *ngIf="!login.isLoggedIn()">
+      Login
+    </button>
+    <button data-cy="dashboard-button" mat-flat-button color="primary" (click)="dashboard()" *ngIf="login.isLoggedIn()">
+      Dashboard
+    </button>
+    <button data-cy="logout-button" mat-flat-button color="primary" (click)="logout()" *ngIf="login.isLoggedIn()">
+      Logout
+    </button>
+  </div>
+</mat-toolbar>

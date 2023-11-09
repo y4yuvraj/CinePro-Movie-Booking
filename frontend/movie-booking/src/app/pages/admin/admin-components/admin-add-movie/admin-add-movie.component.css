@@ -1,0 +1,17 @@
+.movieLogo
+{
+    max-width:200px;
+    max-height: 200px;
+    border-radius: 100%;
+}
+.full-width
+{
+    width: 100%;
+}
+.ml {
+    margin-left: 20px;
+}
+.form
+{
+    background-color: #effcff;
+}

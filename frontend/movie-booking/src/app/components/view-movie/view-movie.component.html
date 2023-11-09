@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <mat-card class="view">
+        <div>
+          <h1 class="text-center">View Movie</h1>
+          <div class="mat-elevation-z8" style="overflow-x: auto;">
+            <table class="table" style="width: 100%;" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Theatre</th>
+                  <th>Status</th>
+                  <th>Price</th>
+                  <th>Available Tickets</th>
+                  <th *ngIf="isAdmin">Status</th>
+                  <th *ngIf="isAdmin">Delete Movie</th>
+                  <th *ngIf="isUser">Book Movie</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let movie of movies">
+                  <td>{{ movie.movieName }}</td>
+                  <td>{{ movie.theatreName }}</td>
+                  <td>{{ movie.status }}</td>
+                  <td>{{ movie.price }}</td>
+                  <td>{{ movie.availableTickets }}</td>
+                  <td *ngIf="isAdmin"><button mat-raised-button color="primary"
+                      (click)="getStatus(movie.movieName)">Status</button></td>
+                  <td *ngIf="isAdmin"><button mat-raised-button color="warn"
+                      (click)="deleteMovie(movie.movieName,movie.movieId)">Delete</button></td>
+                  <td *ngIf="isUser"><button mat-raised-button (click)="openTicketQuantityDialog(movie.movieName,movie.theatreName)"
+                      color="primary">Book</button></td>
+                  <!-- <td *ngIf="isUser"> <mat-form-field>
+                      <input matInput #quantityInput type="number" placeholder="Quantity" [ngModel]="quantity"
+                        name="quantity">
+                    </mat-form-field></td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

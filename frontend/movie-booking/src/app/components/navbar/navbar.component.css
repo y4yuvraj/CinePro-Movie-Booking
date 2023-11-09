@@ -1,0 +1,16 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .mat-toolbar button {
+    font-size: 16px; 
+  }
+  #heading
+  {
+    font-size: 24px;
+  }
+  @media (max-width: 461px) {
+    .navbar-buttons {
+      display: flex;
+      flex-direction: column;
+    }
+  }
